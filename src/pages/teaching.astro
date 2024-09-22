@@ -1,19 +1,51 @@
 ---
-import { Image } from "astro:assets";
-import aboutImg from "@/assets/pic.jpeg";
 import PageLayout from "@/layouts/Base.astro";
 
 const meta = {
 	description: "I'm a starter theme for Astro.build",
-	title: "About",
+	title: "Teaching",
 };
+
+const cactusTeaching: { desc: string; href, title: string }[] = [
+	{
+		desc: "History of Modern Philosophy",
+		title: "700373",
+	},
+    {
+		desc: "Philosophy of Statistics",
+		title: "####",
+	},
+    {
+		desc: "Philosophy of Public Governance",
+		title: "####",
+	},
+    {
+		desc: "The Canon and Beyond",
+		title: "####",
+	},
+];
 ---
 
 <PageLayout meta={meta}>
 	<div class="space-y-6">
-		<h1 class="title">Teaching</h1>
-		<p>
-            Thing here about teaching
-		</p>
-	</div>
+    <section class="mt-16">
+		<dl class="space-y-4">
+		<h2 class="title mb-4 text-xl">Teaching 2024-2025</h2>
+			{
+				cactusTeaching.map(({ desc, href, title }) => (
+					<div class="flex flex-col gap-2 sm:flex-row">
+						<dt>
+							<span class="flex">
+								<a class="cactus-link" href={href} rel="noreferrer" target="_blank">
+									{title}
+								</a>
+								:
+							</span>
+						</dt>
+						<dd>{desc}</dd>
+					</div>
+				))
+			}
+		</dl>
+	</section>
 </PageLayout>

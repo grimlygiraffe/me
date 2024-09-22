@@ -1,6 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import aboutImg from "@/assets/pic.jpeg";
+import cerradoImg from "@/assets/cerrado.jpg";
 import PageLayout from "@/layouts/Base.astro";
 
 const meta = {
@@ -25,5 +26,15 @@ the Cerrado biome around Brasília, which is very dear to me (but which is, unfo
 				src={aboutImg}
 			/>
 		</div>
+		<p>Me at one with Brasília</p>
+		<div class="flex justify-center">
+			<Image
+				alt="Blending in"
+				fetchpriority="high"
+				loading="eager"
+				src={cerradoImg}
+			/>
+		</div>
+		<p>The Cerrado</p>
 	</div>
 </PageLayout>
