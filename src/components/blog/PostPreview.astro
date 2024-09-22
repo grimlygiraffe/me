@@ -19,5 +19,6 @@ const postDate = getPostSortDate(post);
 	<a class="cactus-link" data-astro-prefetch href={`/posts/${post.slug}/`}>
 		{post.data.title}
 	</a>
+<p class="mt-1 italic text-gray-700 dark:text-gray-300">{post.data.description}</p>
 </Tag>
 {withDesc && <q class="line-clamp-3 italic">{post.data.description}</q>}

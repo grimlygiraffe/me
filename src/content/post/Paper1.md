@@ -1,6 +1,6 @@
 ---
-title: "Paper 1"
-description: "Paper on epistemic democracy"
+title: "The Suspension Problem for Epistemic Democracy"
+description: "The Philosophical Quarterly"
 publishDate: "Sept 2024"
 ---
 
