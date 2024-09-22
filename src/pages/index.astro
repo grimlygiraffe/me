@@ -8,7 +8,15 @@ const MAX_POSTS = 10;
 const allPosts = await getAllPosts();
 const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS);
 
-const cactusTech: { desc: string; href: string; title: string }[] = [
+const cactusTech: { desc: string; title: string }[] = [
+	{
+		desc: "Shows that a zetetic view of democracy solves a tension arising between requirements to suspend political belief and core democratic commitments.",
+		title: "#1",
+	},
+	{
+		desc: "Argues that even when acting reasonably and in good faith, citizens can be anti-democratic if they violate zetetic norms of political decision-making",
+		title: "#2",
+	},
 ];
 ---
 
@@ -34,6 +42,7 @@ My current research looks at how the epistemology of inquiry can inform normativ
 	</section>
 	<section class="mt-16">
 		<dl class="space-y-4">
+		<h2 class="title mb-4 text-xl">Work in Progress</h2>
 			{
 				cactusTech.map(({ desc, href, title }) => (
 					<div class="flex flex-col gap-2 sm:flex-row">
