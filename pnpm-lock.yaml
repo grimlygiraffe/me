@@ -20,6 +20,9 @@ importers:
       '@astrojs/tailwind':
         specifier: 5.1.0
         version: 5.1.0(astro@4.14.3(@types/node@22.4.2)(rollup@4.21.0)(typescript@5.5.4))(tailwindcss@3.4.10)
+      '@iconify-json/academicons':
+        specifier: ^1.2.0
+        version: 1.2.1
       astro:
         specifier: 4.14.3
         version: 4.14.3(@types/node@22.4.2)(rollup@4.21.0)(typescript@5.5.4)
@@ -27,8 +30,8 @@ importers:
         specifier: ^0.35.6
         version: 0.35.6(astro@4.14.3(@types/node@22.4.2)(rollup@4.21.0)(typescript@5.5.4))
       astro-icon:
-        specifier: ^1.1.1
-        version: 1.1.1
+        specifier: ^1.1.4
+        version: 1.1.4
       cssnano:
         specifier: ^7.0.5
         version: 7.0.5(postcss@8.4.41)
@@ -517,6 +520,9 @@ packages:
 
   '@expressive-code/plugin-text-markers@0.35.6':
     resolution: {integrity: sha512-/k9eWVZSCs+uEKHR++22Uu6eIbHWEciVHbIuD8frT8DlqTtHYaaiwHPncO6KFWnGDz5i/gL7oyl6XmOi/E6GVg==}
+
+  '@iconify-json/academicons@1.2.1':
+    resolution: {integrity: sha512-dc5P5GH2/HQwhQYBjnxmNqQSgGGauYCb1ZJTGP3i8J6MwO1lL4amieQNPAqHWOwl8+i66Qi9xXQCg/xBk4Zg1w==}
 
   '@iconify-json/mdi@1.1.68':
     resolution: {integrity: sha512-7//TKCiXLU6kNWeOJRTBbisofVO7rF1sD1TZTL4/V9nqlmVNczQ5IOY0GgKOTsitkcTnX9GXgrgbjw3OI5B69w==}
@@ -1053,8 +1059,8 @@ packages:
     peerDependencies:
       astro: ^4.0.0-beta || ^3.3.0
 
-  astro-icon@1.1.1:
-    resolution: {integrity: sha512-HKBesWk2Faw/0+klLX+epQVqdTfSzZz/9+5vxXUjTJaN/HnpDf608gRPgHh7ZtwBPNJMEFoU5GLegxoDcT56OQ==}
+  astro-icon@1.1.4:
+    resolution: {integrity: sha512-sMLkQaevIQLv38WBzb/RDbsmxhg5+X+KcNmpTi9cE6MLurNWU1MPnlO87d9Vwg4HxTenKpDlYp81A3syXFW/gw==}
 
   astro@4.14.3:
     resolution: {integrity: sha512-+Hox1EhiS5iHy4pfZaLidpD9x7WVAcgGgjTo1JOYSQ0+a2ZA9mbLtGVEXbUeeYweviNc0ZNHMnI4r9S2e8xnXg==}
@@ -3694,6 +3700,10 @@ snapshots:
     dependencies:
       '@expressive-code/core': 0.35.6
 
+  '@iconify-json/academicons@1.2.1':
+    dependencies:
+      '@iconify/types': 2.0.0
+
   '@iconify-json/mdi@1.1.68':
     dependencies:
       '@iconify/types': 2.0.0
@@ -4210,7 +4220,7 @@ snapshots:
       astro: 4.14.3(@types/node@22.4.2)(rollup@4.21.0)(typescript@5.5.4)
       rehype-expressive-code: 0.35.6
 
-  astro-icon@1.1.1:
+  astro-icon@1.1.4:
     dependencies:
       '@iconify/tools': 4.0.5
       '@iconify/types': 2.0.0
