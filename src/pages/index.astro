@@ -1,12 +1,18 @@
 ---
 import SocialList from "@/components/SocialList.astro";
 import PostPreview from "@/components/blog/PostPreview.astro";
+import EditorialPreview from "@/components/blog/EditorialPreview.astro"; // Import the new component
 import { getAllPosts, sortMDByDate } from "@/data/post";
 import PageLayout from "@/layouts/Base.astro";
 
 const MAX_POSTS = 10;
 const allPosts = await getAllPosts();
-const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS);
+
+const paperPosts = allPosts.filter(post => post.data.category === "paper");
+const editorialPosts = allPosts.filter(post => post.data.category === "editorial");
+
+const paperPostsByDate = sortMDByDate(paperPosts).slice(0, MAX_POSTS);
+const editorialPostsByDate = sortMDByDate(editorialPosts).slice(0, MAX_POSTS);
 
 const cactusTech: { desc: string; title: string }[] = [
 	{
@@ -18,8 +24,12 @@ const cactusTech: { desc: string; title: string }[] = [
 		title: "#2",
 	},
 	{
-		desc: "What does it mean to have a skillful intuition? This paper shows that an enactivist account of intuition aptly answers this question.",
+		desc: "Do parasocial relationships with politicians threaten democracy? We contend that not always. Actually, they can even improve political legitimacy.",
 		title: "#3",
+	},	
+	{
+		desc: "What does it mean to have a skillful intuition? This paper shows that an enactivist account of intuition aptly answers this question.",
+		title: "#4",
 	},
 ];
 ---
@@ -27,23 +37,36 @@ const cactusTech: { desc: string; title: string }[] = [
 <PageLayout meta={{ title: "Home" }}>
 	<section>
 		<p class="mb-4">
-My current research looks at how the epistemology of inquiry can inform normative democratic theory, but I occasionally delve into topics in philosophy of mind. I have also worked extensively on the norms that govern philosophical inquiry.
+Most of my current research looks at how the epistemology of inquiry can inform normative democratic theory, but I occasionally delve into topics in philosophy of mind. I have also worked extensively on the norms of philosophical inquiry.
 </p>
 		<SocialList />
 	</section>
-	<section aria-label="Blog post list" class="mt-16">
-		<h2 class="title mb-4 text-xl">Papers</h2>
-		<ul class="space-y-4">
-			{
-				allPostsByDate.map((p) => (
-					<li class="grid gap-2 sm:grid-cols-[auto_1fr] sm:[&_q]:col-start-2">
-						{/* @ts-expect-error - issue with -> @astrojs/check@0.9.3 */}
-						<PostPreview post={p} />
-					</li>
-				))
-			}
-		</ul>
-	</section>
+<section aria-label="Papers list" class="mt-16">
+  <h2 class="title mb-4 text-xl">Papers</h2>
+  <ul class="space-y-4">
+    {
+      paperPostsByDate.map((p) => (
+        <li class="grid gap-2 sm:grid-cols-[auto_1fr] sm:[&_q]:col-start-2">
+          <PostPreview post={p} />
+        </li>
+      ))
+    }
+  </ul>
+</section>
+
+<!-- Editorial section -->
+<section aria-label="Editorial work" class="mt-16">
+  <h2 class="title mb-4 text-xl">Editorial work</h2>
+  <ul class="space-y-4">
+    {
+      editorialPostsByDate.map((p) => (
+        <li class="grid gap-2 sm:grid-cols-[auto_1fr] sm:[&_q]:col-start-2">
+          <PostPreview post={p} />
+        </li>
+      ))
+    }
+  </ul>
+</section>
 	<section class="mt-16">
 		<dl class="space-y-4">
 		<h2 class="title mb-4 text-xl">Work in Progress</h2>
