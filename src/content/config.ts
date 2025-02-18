@@ -17,6 +17,7 @@ const post = defineCollection({
 				})
 				.optional(),
 			description: z.string().min(1).max(160),
+			category: z.enum(["paper", "editorial"]).default("paper"),
 			draft: z.boolean().default(false),
 			ogImage: z.string().optional(),
 			publishDate: z
@@ -33,4 +34,30 @@ const post = defineCollection({
 	type: "content",
 });
 
-export const collections = { post };
+const post2 = defineCollection({
+	schema: ({ image }) =>
+		z.object({
+			coverImage: z
+				.object({
+					alt: z.string(),
+					src: image(),
+				})
+				.optional(),
+			description: z.string().min(1).max(160),
+			draft: z.boolean().default(false),
+			ogImage: z.string().optional(),
+			publishDate: z
+				.string()
+				.or(z.date())
+				.transform((val) => new Date(val)),
+			tags: z.array(z.string()).default([]).transform(removeDupsAndLowerCase),
+			title: z.string().max(100),
+			updatedDate: z
+				.string()
+				.optional()
+				.transform((str) => (str ? new Date(str) : undefined)),
+		}),
+	type: "content",
+});
+
+export const collections = { post, post2 };

@@ -1,6 +1,7 @@
 ---
 title: "The Suspension Problem for Epistemic Democracy"
 description: "The Philosophical Quarterly"
+category: "paper"
 publishDate: "Sept 2024"
 ---
 
