@@ -1,7 +1,7 @@
 ---
 title: Phenomenally Skilful Intuitions
 description: Erkenntnis
-publishDate: Forthcoming
+publishDate: 03 June 2026
 tags: []
 category: "paper"
 draft: false
