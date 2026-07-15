@@ -17,7 +17,7 @@ const post = defineCollection({
 				})
 				.optional(),
 			description: z.string().min(1).max(160),
-			category: z.enum(["paper", "editorial"]).default("paper"),
+			category: z.enum(["paper", "editorial", "blog"]).default("paper"),
 			draft: z.boolean().default(false),
 			ogImage: z.string().optional(),
 			publishDate: z
